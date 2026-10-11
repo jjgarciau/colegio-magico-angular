@@ -35,6 +35,16 @@
         Usa @empty para mostrar UNA fila con el texto:  No hay hechizos de {{ tipo() }}.
         PISTA: mira features/magos/mago-list/mago-list.component.html
       -->
+      @for (h of hechizos(); track h.id) {
+        <tr>
+          <td>{{ h.id }}</td>
+          <td>{{ h.nombre }}</td>
+          <td>{{ h.tipoMagia }}</td>
+          <td>{{ h.nivelPoder }}</td>
+        </tr>
+      } @empty {
+        <tr><td colspan="4">No hay hechizos de {{ tipo() }}.</td></tr>
+      }
     </tbody>
   </table>
 }
