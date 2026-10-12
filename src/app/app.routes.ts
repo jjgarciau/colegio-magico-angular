@@ -3,6 +3,9 @@ import { Inicio } from './features/inicio/inicio.component';
 import { MagoList } from './features/magos/mago-list/mago-list.component';
 import { MagoDetail } from './features/magos/mago-detail/mago-detail.component';
 import { MagoForm } from './features/magos/mago-form/mago-form.component';
+import { HechizoBuscador } from './features/hechizos/hechizo-buscador/hechizo-buscador.component';
+import { HechizoForm } from './features/hechizos/hechizo-form/hechizo-form.component';
+
 
 // RUTAS DEL FRONTEND (pantallas). Comparación con el backend:
 //   backend  @Path("/magos")  +  @Path("/{id}")      → endpoint que devuelve JSON
@@ -14,6 +17,8 @@ export const routes: Routes = [
   { path: 'magos/nuevo', component: MagoForm },
   { path: 'magos/:id', component: MagoDetail },
   { path: 'magos/:id/editar', component: MagoForm },
+  { path: 'hechizos', component: HechizoBuscador},
+  { path: 'hechizos/nuevo', component: HechizoForm},
 
   // 🏰 RETO 4: Los Pasillos del Castillo
   // Agrega aquí dos rutas nuevas:

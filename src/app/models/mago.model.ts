@@ -5,7 +5,9 @@ export interface Mago {
   id?: number;      // Opcional (?): al CREAR un mago todavía no tiene id, lo asigna la BD.
   nombre: string;
   casa: string;
+
 }
+
 
 // Casas disponibles para el <select> del formulario.
 export const CASAS = ['Gryffindor', 'Slytherin', 'Ravenclaw', 'Hufflepuff'];
