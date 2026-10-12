@@ -24,4 +24,5 @@ export class HechizoApiService {
       responseType: 'text'
     });
   }
+  
 }
