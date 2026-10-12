@@ -30,6 +30,12 @@ export class HechizoBuscador {
     // RETO 5.1: Cada vez que cambie tipo(), si tiene valor, llama a this.buscar(tipo).
     // PISTA: effect(() => { ... }) se vuelve a ejecutar solo cuando cambia una señal que lee.
     // Escribe tu código aquí:
+    effect(() => {
+      const tipoActual = this.tipo();
+      if (tipoActual) {
+        this.buscar(tipoActual);
+      }
+    });
   }
 
   // Al elegir un tipo en el <select> cambiamos la URL; el effect de arriba hace la búsqueda.
@@ -43,5 +49,17 @@ export class HechizoBuscador {
     //   - next  → guarda la lista en la señal hechizos y buscando = false.
     //   - error → guarda mensajeDeError(err) en la señal error y buscando = false.
     // Escribe tu código aquí:
+    this.buscando.set(true);
+    this.error.set('');
+    this.hechizoApi.buscarPorTipo(tipo).subscribe({
+      next: (hechizos) => {
+        this.hechizos.set(hechizos);
+        this.buscando.set(false);
+      },
+      error: (err) => {
+        this.error.set(mensajeDeError(err));
+        this.buscando.set(false);
+      }
+    });
   }
 }

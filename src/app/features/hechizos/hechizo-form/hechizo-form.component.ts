@@ -29,9 +29,9 @@ export class HechizoForm {
   //   - nombre:     obligatorio                       → Validators.required
   //   - nivelPoder: obligatorio, mínimo 1, máximo 100 → Validators.required, Validators.min(1), Validators.max(100)
   form = this.fb.nonNullable.group({
-    nombre: [''],
+    nombre: ['', Validators.required],
     tipoMagia: ['Fuego'],
-    nivelPoder: [10],
+    nivelPoder: [10, [Validators.required, Validators.min(1), Validators.max(100)]],
   });
 
   guardar(): void {
@@ -42,5 +42,24 @@ export class HechizoForm {
     //      - next  → this.router.navigate(['/hechizos'], { queryParams: { tipo: hechizo.tipoMagia } })
     //      - error → this.error.set(mensajeDeError(err))   (así se ve el mensaje del Manager)
     // Escribe tu código aquí:
+    if (this.form.invalid) {
+      this.form.markAllAsTouched();
+      return;
+    }
+
+
+    const hechizo = this.form.getRawValue() as Hechizo;
+
+
+    this.hechizoApi.crear(hechizo).subscribe({
+      next: () => {
+        this.router.navigate(['/hechizos'], {
+          queryParams: { tipo: hechizo.tipoMagia },
+        });
+      },
+      error: (err) => {
+        this.error.set(mensajeDeError(err));
+      },
+    });
   }
 }
