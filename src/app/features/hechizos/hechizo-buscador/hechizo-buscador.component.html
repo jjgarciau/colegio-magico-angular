@@ -1,16 +1,26 @@
+
 <div class="fila entre">
   <div>
     <h1>Grimorio de hechizos</h1>
-    <p class="subtitulo">GET /api/hechizos?tipo={{ tipo() ?? '…' }}</p>
+    <p class="subtitulo">
+      GET /api/hechizos?tipo={{ tipo() ?? '…' }}
+    </p>
   </div>
-  <a class="btn" routerLink="/hechizos/nuevo">+ Nuevo hechizo</a>
+
+  <a class="btn" routerLink="/hechizos/nuevo">
+    + Nuevo hechizo
+  </a>
 </div>
 
 <label class="selector">
   Tipo de magia
-  <!-- (change) es un EVENTO del DOM; $event.target.value es la opción elegida -->
-  <select [value]="tipo() ?? ''" (change)="seleccionar($any($event.target).value)">
+
+  <select
+    [value]="tipo() ?? ''"
+    (change)="seleccionar($any($event.target).value)"
+  >
     <option value="" disabled>Elige un tipo…</option>
+
     @for (t of tipos; track t) {
       <option [value]="t">{{ t }}</option>
     }
@@ -20,21 +30,38 @@
 <app-alerta [mensaje]="error()" tipo="error" />
 
 @if (!tipo()) {
-  <p class="vacio">El backend filtra por tipo: elige uno para consultar.</p>
+  <p class="vacio">
+    El backend filtra por tipo: elige uno para consultar.
+  </p>
 } @else if (buscando()) {
   <p class="vacio">Abriendo el grimorio…</p>
 } @else {
   <table>
     <thead>
-      <tr><th>#</th><th>Nombre</th><th>Tipo</th><th>Poder</th></tr>
+      <tr>
+        <th>#</th>
+        <th>Nombre</th>
+        <th>Tipo</th>
+        <th>Poder</th>
+      </tr>
     </thead>
+
     <tbody>
-      <!--
-        RETO 5.3: Pinta una fila <tr> por cada hechizo de hechizos() usando @for (con track h.id).
-        Cada fila lleva 4 celdas <td>: id, nombre, tipoMagia y nivelPoder.
-        Usa @empty para mostrar UNA fila con el texto:  No hay hechizos de {{ tipo() }}.
-        PISTA: mira features/magos/mago-list/mago-list.component.html
-      -->
+      <!-- RETO 5.3: Mostrar los hechizos -->
+      @for (h of hechizos(); track h.id) {
+        <tr>
+          <td>{{ h.id }}</td>
+          <td>{{ h.nombre }}</td>
+          <td>{{ h.tipoMagia }}</td>
+          <td>{{ h.nivelPoder }}</td>
+        </tr>
+      } @empty {
+        <tr>
+          <td colspan="4">
+            No hay hechizos de {{ tipo() }}.
+          </td>
+        </tr>
+      }
     </tbody>
   </table>
 }
