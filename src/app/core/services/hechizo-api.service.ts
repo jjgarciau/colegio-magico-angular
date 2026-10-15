@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Hechizo } from '../../models/hechizo.model';
@@ -16,7 +16,8 @@ export class HechizoApiService {
   // PISTA: crea new HttpParams().set('tipo', tipo) y pásalo en las opciones del get: { params }.
   buscarPorTipo(tipo: string): Observable<Hechizo[]> {
     // Escribe tu código aquí y borra la línea de abajo:
-    return of([]);
+    const params = new HttpParams().set('tipo', tipo);
+    return this.http.get<Hechizo[]>(this.url, {params});
   }
 
   // ✍️ RETO 3: El Escriba del Grimorio
