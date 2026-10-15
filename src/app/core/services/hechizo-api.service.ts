@@ -18,7 +18,7 @@ buscarPorTipo(tipo: string): Observable<Hechizo[]> {
     return this.http.get<Hechizo[]>(this.apiUrl, { params });
   }
 
-   // ✍️ RETO 3: El Escriba del Grimorio
+// ✍️ RETO 3: El Escriba del Grimorio
   // Consume:  POST /api/hechizos   (en el backend: @POST, responde 201 o 400)
   // ⚠️ El backend responde TEXTO ("Hechizo creado correctamente"), no JSON.
   // PISTA: mira cómo lo resuelve MagoApiService.crear() con responseType.
