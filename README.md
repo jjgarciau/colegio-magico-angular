@@ -11,7 +11,7 @@ sección de **Hechizos** (el *Grimorio*), completando 6 retos que el **Tribunal 
 1. **Haz un Fork** de este repositorio hacia tu cuenta personal.
 2. **Crea tu entorno mágico:** abre un Codespace (**Code → Codespaces → Create codespace on main**) o clónalo en tu equipo (Node.js 20.19+).
 3. Activa la "Magia del Tribunal" en la pestaña **Actions** de tu repositorio.
-4. Instala los ingredientes: `npm install`
+4. Instala los ingredientes: `npm install`//esto ya lo hice
 5. **Levanta el backend** del Colegio Mágico (`mvn spring-boot:run` en el repo del backend, puerto 8080).
    ¿No tienes el backend a mano? `npm run mock` levanta uno simulado con las mismas rutas.
 6. Levanta el portal: `npm start` y abre http://localhost:4200
@@ -22,7 +22,7 @@ sección de **Hechizos** (el *Grimorio*), completando 6 retos que el **Tribunal 
 9. Haz `git add`, `git commit` y `git push`. ¡El Tribunal abrirá un Issue con tu reto actual y te calificará!
 
 > ⚠️ **Reglas de oro:** no modifiques los archivos de `src/retos/` (son las pruebas del Tribunal) ni la carpeta `.github/`.
-> Cada fallo que el Tribunal detecte en un reto resta 2 puntos de ese reto (mínimo 2/10).
+> Cada fallo que el Tribunal detecte en un reto resta 2 puntos de ese reto (mínimo 2/10).  
 
 ---
 
