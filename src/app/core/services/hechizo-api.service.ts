@@ -26,6 +26,6 @@ export class HechizoApiService {
   // PISTA: mira cómo lo resuelve MagoApiService.crear() con responseType.
   crear(hechizo: Hechizo): Observable<string> {
     // Escribe tu código aquí y borra la línea de abajo:
-    return of('');
+    return this.http.post(this.url, hechizo, { responseType: 'text' });
   }
 }
