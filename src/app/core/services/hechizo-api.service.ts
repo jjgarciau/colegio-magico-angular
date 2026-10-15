@@ -10,7 +10,7 @@ export class HechizoApiService {
   private readonly http = inject(HttpClient);
   private readonly url = '/api/hechizos';
 
-  // 🔍 RETO 2: El Ojo que Todo lo Busque
+  // 🔍 RETO 2: El Ojo que Todo lo Busca
   // Consume:  GET /api/hechizos?tipo=Fuego   (en el backend: @GET + @QueryParam("tipo"))
   // Debe devolver el Observable de this.http.get<Hechizo[]>(...) enviando el parámetro "tipo".
   // PISTA: crea new HttpParams().set('tipo', tipo) y pásalo en las opciones del get: { params }.
