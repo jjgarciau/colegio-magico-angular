@@ -1,0 +1,18 @@
+# 📝 Plantilla de Entrega: El Pensadero (Frontend)
+
+Responde a las siguientes preguntas como parte de tu evaluación final. Guarda una copia de este archivo con tu nombre (ej: `JUAN_PEREZ.md`) dentro de `magos_graduados/`.
+
+1.  **¿Usaste Inteligencia Artificial para resolver los retos (del 1 al 6)?**
+    *Respuesta:* (Si utilice Ia como herramienta de apoyo y guia durante el principio del proceso me ayudo a resolver dudas y corregir errores que tenia a la hora de mandar un reto)
+
+2.  **¿Para qué específicamente te fue útil la IA? (Ej. para entender los Observables, para explicar errores de TypeScript, para que hiciera el código desde cero)**
+    *Respuesta:* (Me fue muy util en encontrar mas rapido que errores tenia y en como corregirlos ya que muchas veces no entendia como hacerlo)
+
+3.  **¿Qué fue lo que más se te dificultó al conectar Angular con la API de Spring Boot?**
+    *Respuesta:* (lo que mas me costo fue la comunicacion asincrona mediante los observables y el metodo asegurandome de que la informacion que enviaba y recibia desde los componentes de angular coincidiera exactamente con lo el backend pedia)
+
+4.  **Explica con tus palabras la diferencia entre un componente y un servicio en Angular.**
+    *Respuesta:* (Un componente es una seccion visual y grafica que podra ver el usuario en la pantalla manejando la interfaz con los archivos Typescript y html mientras que un servicio es como una clase que se encarga de la logica de negocio y de hacer peticiones al Backend para obtener o enviar los datos y esta mantiene al codigo limpio sin repeticiones)
+
+5.  **¿Por qué validamos en el formulario si el backend ya valida en el Manager?**
+    *Respuesta:* (se valida en el formulario para poder dar una respuesta mas rapida y fluida al usuario evitando que envie datos incorrectos o vacios y aunque el Backend vuelve a validar en el manager por motivos de seguridad de los datos la validacion en el angular mejora la experiencia de usuario guiandolo para corregir errores al instante)
