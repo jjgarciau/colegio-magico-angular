@@ -21,7 +21,7 @@ export class HechizoApiService {
 
   // ✍️ RETO 3: El Escriba del Grimorio
   // Consume:  POST /api/hechizos   (en el backend: @POST, responde 201 o 400)
-  // ⚠️ El backend responde TEXTO ("Hechizo creado correctamente"), no JSON.
+  // ⚠️ El backend responde TEXTO ("Hechizo creado correctamente"), no JSON
   // PISTA: mira cómo lo resuelve MagoApiService.crear() con responseType.
   crear(hechizo: Hechizo): Observable<string> {
     // Escribe tu código aquí y borra la línea de abajo:
