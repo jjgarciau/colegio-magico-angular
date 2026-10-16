@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Hechizo } from '../../models/hechizo.model';
@@ -15,8 +15,8 @@ export class HechizoApiService {
   // Debe devolver el Observable de this.http.get<Hechizo[]>(...) enviando el parámetro "tipo".
   // PISTA: crea new HttpParams().set('tipo', tipo) y pásalo en las opciones del get: { params }.
   buscarPorTipo(tipo: string): Observable<Hechizo[]> {
-    // Escribe tu código aquí y borra la línea de abajo:
-    return of([]);
+    const params = new HttpParams().set('tipo', tipo);
+    return this.http.get<Hechizo[]>(this.url, { params });
   }
 
   // ✍️ RETO 3: El Escriba del Grimorio
@@ -24,7 +24,6 @@ export class HechizoApiService {
   // ⚠️ El backend responde TEXTO ("Hechizo creado correctamente"), no JSON.
   // PISTA: mira cómo lo resuelve MagoApiService.crear() con responseType.
   crear(hechizo: Hechizo): Observable<string> {
-    // Escribe tu código aquí y borra la línea de abajo:
-    return of('');
+    return this.http.post(this.url, hechizo, { responseType: 'text' });
   }
 }
